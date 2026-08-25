@@ -175,10 +175,10 @@
     <script>
 
         // Get all clickable sentences
-        const picture = document.querySelectorAll('.picture');
+        const pictures = document.querySelectorAll('.picture');
 
-        sentences.forEach(picture => {
-            sentence.addEventListener('click', function (e) {
+        pictures.forEach(picture => {
+            pictures.addEventListener('click', function (e) {
                 e.stopPropagation();
 
                 const audioFile = this.getAttribute('data-audio');
