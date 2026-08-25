@@ -60,6 +60,18 @@ p {
     font-weight: bold;
 }
 
+.picture {
+    display: inline;
+    cursor: pointer;
+}
+
+.sentence:hover {
+}
+
+.sentence.playing {
+}
+
+
 /* Default container width for mobile */
 .container {
     max-width: 100%;
