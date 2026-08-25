@@ -116,25 +116,25 @@ p {
         font-size: 32px;
     }
 
-   .header-image {
+   /*.header-image {
         position: absolute;
         right: 5%;
         top: 5%;
         width: 0px;
         height: 0px;
-        object-fit: cover;
+        object-fit: cover;*/
         /* Crop image to fit */
-        animation: slideInRight 0.5s ease-out forwards;
-    }
+        /*animation: slideInRight 0.5s ease-out forwards;
+    }*/
 
-   .header-image2 {
+   /*.header-image2 {
         position: absolute;
         left: 8%;
         width: 0px;
         height: 0px;
         animation: driftAndBob 2.5s ease-in-out forwards;
     }
-}
+}*/
 
 /* ============================================
    DESKTOP (1300px and above)
