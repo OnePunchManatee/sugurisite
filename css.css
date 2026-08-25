@@ -39,7 +39,7 @@ h3 {
 }
 
 p {
-    margin: 18px 0;
+    margin: 22px 0;
     font-family: 'TF2secondary', Arial, sans-serif;
 }
 
@@ -73,7 +73,7 @@ p {
 
 @media (min-width: 768px) {
     body {
-        font-size: 17px;
+        font-size: 22px;
     }
 
     .container {
