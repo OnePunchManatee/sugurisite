@@ -30,8 +30,8 @@
 
 
     <div class="container">
-        <span class="picture" data-audio="yarnyoshi.mp3"><img src="totoros.png" alt="Header image" class="header-image"></span>
-        <span class="picture" data-audio="lovelysong.mp3"><img src="ponyo.png" alt="Header image" class="header-image2"></span>
+        <span class="sentence" data-audio="yarnyoshi.mp3"><img src="totoros.png" alt="Header image" class="header-image"></span>
+        <span class="sentence" data-audio="lovelysong.mp3"><img src="ponyo.png" alt="Header image" class="header-image2"></span>
         <h1 style="text-align: center;">
             It's Me</h1>
         <p style="text-align: center;" class="info">💡 文章をクリックすると音声が再生されます</p>
@@ -126,8 +126,8 @@
         </p>
     </div>
 
-    <span class="picture" data-audio="woodywoods.mp3"><img src="totorobranch.png" alt="Totoro!" style="position: absolute; left: 0;"></span>
-    <span class="picture" data-audio="rizz.mp3"><img src="jiji.png" alt="Jiji!" style="position: absolute; right: 0; width: 20%"></span>
+    <span class="sentence" data-audio="woodywoods.mp3"><img src="totorobranch.png" alt="Totoro!" style="position: absolute; left: 0;"></span>
+    <span class="sentence" data-audio="rizz.mp3"><img src="jiji.png" alt="Jiji!" style="position: absolute; right: 0; width: 20%"></span>
 
     <script>
         // Create a single audio element that we'll reuse
@@ -139,46 +139,6 @@
 
         sentences.forEach(sentence => {
             sentence.addEventListener('click', function (e) {
-                e.stopPropagation();
-
-                const audioFile = this.getAttribute('data-audio');
-
-                // Stop current audio if playing
-                if (currentPlaying) {
-                    currentPlaying.classList.remove('playing');
-                }
-
-                // If clicking the same sentence again, toggle playback
-                if (audio.src.endsWith(audioFile) && !audio.paused) {
-                    audio.pause();
-                    this.classList.remove('playing');
-                    currentPlaying = null;
-                } else {
-                    // Play new audio
-                    audio.src = audioFile;
-                    audio.play();
-                    this.classList.add('playing');
-                    currentPlaying = this;
-                }
-            });
-        });
-
-        // Remove highlight when audio finishes playing
-        audio.addEventListener('ended', function () {
-            if (currentPlaying) {
-                currentPlaying.classList.remove('playing');
-                currentPlaying = null;
-            }
-        });
-    </script>
-
-    <script>
-
-        // Get all clickable sentences
-        const pictures = document.querySelectorAll('.picture');
-
-        pictures.forEach(picture => {
-            pictures.addEventListener('click', function (e) {
                 e.stopPropagation();
 
                 const audioFile = this.getAttribute('data-audio');
