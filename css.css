@@ -1,0 +1,245 @@
+/* ============================================
+   MOBILE-FIRST STYLES (default for all screens)
+   ============================================ */
+
+
+@font-face {
+    font-family: 'TF2Build';
+    src: url('TF2Build.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TF2secondary';
+    src: url('TF2secondary.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3 {
+    margin: 20px 0 10px 0;
+    font-family: 'TF2Build', Arial, sans-serif;
+}
+
+p {
+    margin: 15px 0;
+    font-family: 'TF2secondary', Arial, sans-serif;
+}
+
+.sentence {
+    display: inline;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.sentence:hover {
+    background-color: #e8f4f8;
+}
+
+.sentence.playing {
+    background-color: #b3e5fc;
+    font-weight: bold;
+}
+
+/* Default container width for mobile */
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ============================================
+   TABLETS (768px - 1299px)
+   ============================================ */
+
+@media (min-width: 768px) {
+    body {
+        font-size: 17px;
+    }
+
+    .container {
+        max-width: 750px;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
+
+/* ============================================
+   DESKTOP (1300px and above)
+   ============================================ */
+
+@media (min-width: 1300px) {
+
+    .container {
+        max-width: 1200px;
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    p {
+        line-height: 1.8;
+        text-align: center;
+    }
+
+    .header-image {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        width: 20%px;
+        height: 200px;
+        object-fit: cover;
+        /* Crop image to fit */
+        animation: slideInRight 0.5s ease-out forwards;
+    }
+
+    @keyframes slideInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+            /* Start off right side */
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+            /* End at normal position */
+        }
+    }
+
+    .header-image2 {
+        position: absolute;
+        left: 8%;
+        width: 200px;
+        animation: driftAndBob 2.5s ease-in-out forwards;
+    }
+
+    @keyframes driftAndBob {
+        0% {
+            top: -200px;
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+        }
+
+        100% {
+            top: 5%;
+            /* Final settled position */
+        }
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        position: sticky;
+        top: 20px;
+    }
+
+    .scatter-image {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        z-index: 1000;
+        /* Make sure it's on top */
+        pointer-events: none;
+        /* Optional: lets clicks pass through */
+        transition: all 0.6s ease-out;
+        animation-delay: 0s;
+    }
+
+    .scatter-image.scattered {
+        opacity: 0;
+    }
+
+    .scatter-container {
+        position: fixed;
+        /* Key: the container is fixed */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        /* Lets clicks pass through to content below */
+        z-index: 1000;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        /*position: relative;*/
+        /*border: 1px solid #ddd;*/
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 5% 0 auto;
+        padding: 20px;
+        line-height: 1.8;
+    }
+
+    .sentence {
+        display: inline;
+        cursor: pointer;
+        padding: 2px 4px;
+        border-radius: 3px;
+        transition: background-color 0.2s;
+    }
+
+    .sentence:hover {
+        background-color: #e8f4f8;
+    }
+
+    .sentence.playing {
+        background-color: #b3e5fc;
+        font-weight: bold;
+    }
+
+    p {
+        margin: 15px 0;
+    }
+
+    .info {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    /* Alternative: fade and scale out */
+    /*.scatter-image.scattered {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+}*/
+}
