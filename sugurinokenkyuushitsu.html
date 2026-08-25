@@ -173,6 +173,46 @@
     </script>
 
     <script>
+
+        // Get all clickable sentences
+        const picture = document.querySelectorAll('.picture');
+
+        sentences.forEach(picture => {
+            sentence.addEventListener('click', function (e) {
+                e.stopPropagation();
+
+                const audioFile = this.getAttribute('data-audio');
+
+                // Stop current audio if playing
+                if (currentPlaying) {
+                    currentPlaying.classList.remove('playing');
+                }
+
+                // If clicking the same sentence again, toggle playback
+                if (audio.src.endsWith(audioFile) && !audio.paused) {
+                    audio.pause();
+                    this.classList.remove('playing');
+                    currentPlaying = null;
+                } else {
+                    // Play new audio
+                    audio.src = audioFile;
+                    audio.play();
+                    this.classList.add('playing');
+                    currentPlaying = this;
+                }
+            });
+        });
+
+        // Remove highlight when audio finishes playing
+        audio.addEventListener('ended', function () {
+            if (currentPlaying) {
+                currentPlaying.classList.remove('playing');
+                currentPlaying = null;
+            }
+        });
+    </script>
+
+    <script>
         function scatterImages() {
             const images = document.querySelectorAll('.scatter-image');
 
