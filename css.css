@@ -67,6 +67,25 @@ p {
     padding: 20px;
 }
 
+.header-image {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        width: 0px;
+        height: 0px;
+        object-fit: cover;
+        /* Crop image to fit */
+        animation: slideInRight 0.5s ease-out forwards;
+    }
+
+   .header-image2 {
+        position: absolute;
+        left: 8%;
+        width: 0px;
+        height: 0px;
+        animation: driftAndBob 2.5s ease-in-out forwards;
+    }
+
 /* ============================================
    TABLETS (768px - 1299px)
    ============================================ */
@@ -83,6 +102,25 @@ p {
 
     h1 {
         font-size: 32px;
+    }
+
+   .header-image {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        width: 0px;
+        height: 0px;
+        object-fit: cover;
+        /* Crop image to fit */
+        animation: slideInRight 0.5s ease-out forwards;
+    }
+
+   .header-image2 {
+        position: absolute;
+        left: 8%;
+        width: 0px;
+        height: 0px;
+        animation: driftAndBob 2.5s ease-in-out forwards;
     }
 }
 
