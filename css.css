@@ -65,13 +65,7 @@ p {
     cursor: pointer;
 }
 
-.sentence:hover {
-}
-
-.sentence.playing {
-}
-
-
+@media (max-width: 889px) {
 /* Default container width for mobile */
 .container {
     max-width: 100%;
@@ -83,8 +77,7 @@ p {
         position: absolute;
         right: 5%;
         top: 5%;
-        /*width: 0px;
-        height: 0px;*/
+        width: 27%;
         object-fit: cover;
         /* Crop image to fit */
         animation: slideInRight 0.5s ease-out forwards;
@@ -93,58 +86,54 @@ p {
    .header-image2 {
         position: absolute;
         left: 8%;
-        /*width: 0px;
-        height: 0px;*/
+        width:20%;
         animation: driftAndBob 2.5s ease-in-out forwards;
     }
 
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+}
 /* ============================================
-   TABLETS (768px - 1299px)
+   DESKTOP (768px and above)
    ============================================ */
 
-@media (min-width: 768px) {
-    body {
-        font-size: 22px;
+@media (min-width: 890px) {
+
+    .scatter-image {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        z-index: 1000;
+        /* Make sure it's on top */
+        pointer-events: none;
+        /* Optional: lets clicks pass through */
+        transition: all 0.6s ease-out;
+        animation-delay: 0s;
+    }
+
+    .scatter-image.scattered {
+        opacity: 0;
+    }
+
+    .scatter-container {
+        position: fixed;
+        /* Key: the container is fixed */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        /* Lets clicks pass through to content below */
+        z-index: 1000;
     }
 
     .container {
-        max-width: 750px;
-        padding: 30px;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-
-   /*.header-image {
-        position: absolute;
-        right: 5%;
-        top: 5%;
-        width: 0px;
-        height: 0px;
-        object-fit: cover;*/
-        /* Crop image to fit */
-        /*animation: slideInRight 0.5s ease-out forwards;
-    }*/
-
-   /*.header-image2 {
-        position: absolute;
-        left: 8%;
-        width: 0px;
-        height: 0px;
-        animation: driftAndBob 2.5s ease-in-out forwards;
-    }
-}*/
-
-/* ============================================
-   DESKTOP (1300px and above)
-   ============================================ */
-
-@media (min-width: 1300px) {
-
-    .container {
-        max-width: 1200px;
-        padding: 40px;
+        max-width: 0px;
+        margin: 0 auto;
+        /*position: relative;*/
+        /*border: 1px solid #ddd;*/
     }
 
     h1 {
